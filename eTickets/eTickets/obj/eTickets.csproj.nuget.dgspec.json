@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mac/Documents/PrivateGitRepos/UdemyMVC/eTickets/eTickets/eTickets.csproj": {}
+    "/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/eTickets.csproj": {}
   },
   "projects": {
-    "/Users/mac/Documents/PrivateGitRepos/UdemyMVC/eTickets/eTickets/eTickets.csproj": {
+    "/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/eTickets.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/Documents/PrivateGitRepos/UdemyMVC/eTickets/eTickets/eTickets.csproj",
+        "projectUniqueName": "/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/eTickets.csproj",
         "projectName": "eTickets",
-        "projectPath": "/Users/mac/Documents/PrivateGitRepos/UdemyMVC/eTickets/eTickets/eTickets.csproj",
+        "projectPath": "/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/eTickets.csproj",
         "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/Documents/PrivateGitRepos/UdemyMVC/eTickets/eTickets/obj/",
+        "outputPath": "/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

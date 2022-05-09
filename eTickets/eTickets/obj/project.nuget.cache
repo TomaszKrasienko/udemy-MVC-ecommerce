@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X4udhrDS//gdFHzmbULrKoOyVa/dGn/CF1gqqqdsePWkj/HvcoArH8FvBEi+R2m5ZyyFt6ELUIKXUpkB4s8FrQ==",
+  "dgSpecHash": "Zh3DatdS4K/Z7zJRjN8X1663O0eU5Z5J1P9ZgGbCYe/sMoUXSvsUd+GbU75MKY0XL7UlYD9oBmmA0nOdQdE/Kg==",
   "success": true,
-  "projectFilePath": "/Users/mac/Documents/PrivateGitRepos/UdemyMVC/eTickets/eTickets/eTickets.csproj",
+  "projectFilePath": "/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/eTickets.csproj",
   "expectedPackageFiles": [
     "/Users/mac/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/mac/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
