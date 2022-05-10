@@ -7,31 +7,56 @@
 }
 @*Write Code*@
 <div class="row">
-    <div class="col-md-8 offset-md-1">
-        <table class="table">
-            <thead>
-            <tr class="text-center">
-                <th>@Html.DisplayNameFor(model => model.ImageUrl)</th>
-                <th>@Html.DisplayNameFor(model => model.Name)</th>
-                <th>@Html.DisplayNameFor(model => model.Description)</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach (Movie item in Model)
-            {
-                <tr>
-                    <td class="align-middle">
-                        <img class="rounded-circle" src="@item.ImageUrl" alt="@item.Name" style="max-width: 150px"/>
-                    </td>
-                    <td class="align-middle">
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td class="align-middle">
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                </tr>
-            }
-            </tbody>
-        </table>
-    </div>
+    @foreach (Movie itemMovie in Model)
+    {
+        <dic class="col-md-4 col-xs-6 mb-3">
+            <div class="card mb-3" style="max-width: 540px">
+                <div class="row g-0">
+                    <dic class="col-md-12">
+                        <div class="card-header text-white bg-info">
+                            <h5 class="card-title">
+                                @itemMovie.Name
+                                <a class="text-white float-right"><i class="bi bi-pencil-square"></i></a>
+                            </h5>
+                        </div>
+                    </dic>
+                    <div class="col-md-6">
+                        <img src="@itemMovie.ImageUrl" width="100%" alt="@itemMovie.Name"/>
+                    </div>
+                    <div class="col-md-6">
+                        <dic class="card-body">
+                            <p class="card-text">@itemMovie.Description</p>
+                            <p class="card-text"><b>Cinema: </b>@itemMovie.Cinema.Name</p>
+                            <p class="card-text"><b>Category: </b>@itemMovie.MovieCategory</p>
+                            <p class="card-text"><b>Start Date: </b>@itemMovie.StartDate.ToString("dd MMM yy")</p>
+                            <p class="card-text"><b>End Date: </b>@itemMovie.EndDate.ToString("dd MMM yy")</p>
+                            <p class="card-text">
+                                <b>Status</b>
+                                @if (DateTime.Now >= @itemMovie.StartDate && DateTime.Now <= @itemMovie.EndDate)
+                                {
+                                    <span class="badge btn-success">Avaiable</span>
+                                }
+                                else if(DateTime.Now > @itemMovie.EndDate)
+                                {
+                                    <span class="badge btn-danger">Expired</span>
+                                }
+                                else
+                                {
+                                    <span class="badge btn-primary">Upcoming</span>
+                                }
+                            </p>
+                        </dic>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card-footer">
+                            <p class="card-text">
+                                <a class="btn btn-outline-primary float-right"><i class="bi bi-eye-fill"></i> Details</a>
+                                <a class="btn btn-success text-white"><i class="bi-cart-plus-fill"></i>Add to cart (Price @itemMovie.Price.ToString("C"))</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dic>
+    }
 </div>
