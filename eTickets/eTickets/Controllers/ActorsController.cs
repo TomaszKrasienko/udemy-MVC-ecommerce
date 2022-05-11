@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Threading.Tasks;
 using eTickets.Data;
 using eTickets.Data.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -12,9 +13,9 @@ namespace eTickets.Controllers
         {
             _actorsService = actorsService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data = _actorsService.GetAll();
+            var data = await _actorsService.GetAll();
             return View(data);
         }
     }
