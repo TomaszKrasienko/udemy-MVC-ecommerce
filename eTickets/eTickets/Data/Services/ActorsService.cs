@@ -22,7 +22,11 @@ namespace eTickets.Data.Services
 
         public async Task<Actor> GetById(int id)
         {
-            throw new System.NotImplementedException();
+            var result = await _context
+                .Actors
+                .Where(x => x.Id == id)
+                .SingleOrDefaultAsync();
+            return result;
         }
 
         public async Task Add(Actor actor)
