@@ -45,7 +45,8 @@ namespace eTickets.Controllers
                 return View("NotFound");
             return View(actorDetails);  
         }
-        public async Task<IActionResult> Edit(int id)
+        //Get: Actors/Edit/id
+        public async Task<IActionResult> Delete(int id)
         {
             var actorDetails = await _actorsService
                 .GetByIdAsync(id);
@@ -54,15 +55,15 @@ namespace eTickets.Controllers
             return View(actorDetails);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id, FullName, ProfilePictureUrl, Bio")]Actor actor)
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirm(int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(actor);
-            }
-            await _actorsService.UpdateAsync(id, actor);
-            return RedirectToAction(nameof(Index)); 
+            var actorDetails = await _actorsService
+                .GetByIdAsync(id);
+            if (actorDetails is null)
+                return View("NotFound");
+            await _actorsService.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
