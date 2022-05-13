@@ -14,13 +14,13 @@ namespace eTickets.Data.Services
         {
             _context = context;
         }
-        public async Task<IEnumerable<Actor>> GetAll()
+        public async Task<IEnumerable<Actor>> GetAllAsync()
         {
             var result = await _context.Actors.ToListAsync();
             return result;
         }
 
-        public async Task<Actor> GetById(int id)
+        public async Task<Actor> GetByIdAsync(int id)
         {
             var result = await _context
                 .Actors
@@ -29,7 +29,7 @@ namespace eTickets.Data.Services
             return result;
         }
 
-        public async Task Add(Actor actor)
+        public async Task AddAsync(Actor actor)
         {
             await _context.Actors.AddAsync(actor);
             await _context.SaveChangesAsync();
