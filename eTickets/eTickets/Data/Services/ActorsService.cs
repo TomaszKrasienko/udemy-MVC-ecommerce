@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Threading.Tasks;
 using eTickets.Models;
 using Microsoft.EntityFrameworkCore;
@@ -26,7 +27,8 @@ namespace eTickets.Data.Services
 
         public async Task Add(Actor actor)
         {
-            throw new System.NotImplementedException();
+            await _context.Actors.AddAsync(actor);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<Actor> Update(int id, Actor newActor)
