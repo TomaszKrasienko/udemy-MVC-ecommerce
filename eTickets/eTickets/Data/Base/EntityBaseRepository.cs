@@ -13,25 +13,12 @@ namespace eTickets.Data.Base
         {
             _context = context; 
         }
-        public async Task<IEnumerable<T>> GetAllAsync()
-        {
-            var result = await _context.Set<T>().ToListAsync();
-            return result;
-        }
+        public async Task<IEnumerable<T>> GetAllAsync() => await _context.Set<T>().ToListAsync();
 
-        public async Task<T> GetByIdAsync(int id)
-        {
-            var result = await _context
-                .Set<T>()
-                .Where(x => x.Id == id)
-                .SingleOrDefaultAsync();
-            return result;
-        }
-
-        public Task AddAsync(T entity)
-        {
-            throw new System.NotImplementedException();
-        }
+        public async Task<T> GetByIdAsync(int id) => await _context
+            .Set<T>()
+            .SingleOrDefaultAsync(x => x.Id == id);
+        public async Task AddAsync(T entity) => await _context.Set<T>().AddAsync(entity);
 
         public Task<T> UpdateAsync(int id, T entity)
         {
