@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace eTickets.Data.Base
 {
@@ -20,14 +21,19 @@ namespace eTickets.Data.Base
             .SingleOrDefaultAsync(x => x.Id == id);
         public async Task AddAsync(T entity) => await _context.Set<T>().AddAsync(entity);
 
-        public Task<T> UpdateAsync(int id, T entity)
+        public async Task UpdateAsync(int id, T entity)
         {
-            throw new System.NotImplementedException();
+            EntityEntry entityEntry = _context.Entry<T>(entity);
+            entityEntry.State = EntityState.Modified;
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var entity = await _context
+                .Set<T>()
+                .SingleOrDefaultAsync(x => x.Id == id);
+            EntityEntry entityEntry = _context.Entry<T>(entity);
+            entityEntry.State = EntityState.Deleted;
         }
     }
 }
