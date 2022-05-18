@@ -1,18 +1,31 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace eTickets.Data.Base
 {
     public class EntityBaseRepository<T> : IEntityBaseRepository<T> where T: class, IEntityBase, new()
     {
-        public Task<IEnumerable<T>> GetAllAsync()
+        private readonly AppDbContext _context;
+
+        public EntityBaseRepository(AppDbContext context)
         {
-            throw new System.NotImplementedException();
+            _context = context; 
+        }
+        public async Task<IEnumerable<T>> GetAllAsync()
+        {
+            var result = await _context.Set<T>().ToListAsync();
+            return result;
         }
 
-        public Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var result = await _context
+                .Set<T>()
+                .Where(x => x.Id == id)
+                .SingleOrDefaultAsync();
+            return result;
         }
 
         public Task AddAsync(T entity)
