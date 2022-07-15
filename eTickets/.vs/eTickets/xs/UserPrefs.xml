@@ -1,11 +1,28 @@
 ﻿<Properties StartupConfiguration="{1F10FDAD-21C6-496D-B494-7ED62191EAF5}|Default">
   <MonoDevelop.Ide.ItemProperties.eTickets PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="eTickets/Data/Services/IActorsService.cs">
+    <Files>
+      <File FileName="eTickets/Controllers/ActorsController.cs" Line="13" Column="55" />
+      <File FileName="eTickets/Controllers/CinemasController.cs" Line="1" Column="1" />
+      <File FileName="eTickets/Controllers/MoviesController.cs" Line="1" Column="1" />
+      <File FileName="eTickets/Data/Services/CinemaService.cs" Line="8" Column="45" />
+      <File FileName="eTickets/Data/Base/EntityBaseRepository.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="eTickets/Data/Services/ActorsService.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="eTickets/Data/Services/IActorsService.cs" Line="8" Column="60" NotebookId="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="eTickets" expanded="True">
-            <Node name="eTickets" expanded="True" selected="True" />
+            <Node name="eTickets" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True">
+                <Node name="Base" expanded="True" />
+                <Node name="Services" expanded="True">
+                  <Node name="IActorsService.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
