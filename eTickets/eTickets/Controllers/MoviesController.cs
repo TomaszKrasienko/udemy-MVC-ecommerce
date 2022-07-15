@@ -26,5 +26,10 @@ namespace eTickets.Controllers
             var movieDetails = await _moviesService.GetMovieByIdAsync(id);
             return View(movieDetails); 
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
