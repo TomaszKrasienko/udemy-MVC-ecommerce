@@ -163,3 +163,4 @@
 /Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/obj/Debug/net5.0/Razor/Views/Cinemas/Delete.cshtml.g.cs
 /Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/obj/Debug/net5.0/Razor/Views/Movies/Details.cshtml.g.cs
 /Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/obj/Debug/net5.0/Razor/Views/Movies/Create.cshtml.g.cs
+/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/obj/Debug/net5.0/Razor/Views/Shared/_CreateItem.cshtml.g.cs
