@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using eTickets.Data.Base;
 using eTickets.Models;
@@ -22,6 +23,17 @@ namespace eTickets.Data.Services
                 .Include(a => a.Actors_Movies).ThenInclude(a => a.Actor)
                 .SingleOrDefaultAsync(x => x.Id == id);
             return movieDetails;
+        }
+
+        public async Task<NewMovieDropdownsVM> GetNewMovieDropdownsValues()
+        {
+            var respone = new NewMovieDropdownsVM()
+            {
+                Actors = await _context.Actors.OrderBy(x => x.FullName).ToListAsync(),
+                Cinemas = await _context.Cinemas.OrderBy(x => x.Name).ToListAsync(),
+                Producers = await _context.Producers.OrderBy(x => x.FullName).ToListAsync()
+            };
+            return respone;
         }
     }
 }
