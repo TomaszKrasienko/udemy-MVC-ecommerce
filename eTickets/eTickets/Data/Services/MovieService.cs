@@ -35,5 +35,66 @@ namespace eTickets.Data.Services
             };
             return respone;
         }
+
+        public async Task AddNewMovieAsync(NewMovieVM data)
+        {
+            var newMovie = new Movie()
+            {
+                Name = data.Name,
+                Description = data.Description,
+                Price = data.Price,
+                ImageUrl = data.ImageUrl,
+                StartDate = data.StartDate,
+                EndDate = data.EndDate,
+                ProducerId = data.ProducerId,
+                CinemaId = data.CinemaId
+            };
+            await _context.Movies.AddAsync(newMovie);
+            await _context.SaveChangesAsync();
+            foreach (var actorId in data.ActorsIds)
+            {
+                var newActorMovie = new Actor_Movie()
+                {
+                    MovieId = newMovie.Id,
+                    ActorId = actorId
+                };
+                await _context.ActorsMovies.AddAsync(newActorMovie);
+            }
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateMovieAsync(int id, NewMovieVM data)
+        {
+            var dbMovie = await _context.Movies
+                .SingleOrDefaultAsync(x => x.Id == data.Id);
+            if (dbMovie != null)
+            {
+                dbMovie.Name = data.Name;
+                dbMovie.Description = data.Description; 
+                dbMovie.Price = data.Price; 
+                dbMovie.ImageUrl = data.ImageUrl;
+                dbMovie.StartDate = data.StartDate;
+                dbMovie.EndDate = data.EndDate;
+                dbMovie.ProducerId = data.ProducerId;
+                dbMovie.CinemaId = data.CinemaId;
+                await _context.SaveChangesAsync();
+            }
+
+            var existingActorsDb = await _context.ActorsMovies
+                .Where(x => x.MovieId == data.Id)
+                .ToListAsync();
+            _context.ActorsMovies.RemoveRange(existingActorsDb);
+            await _context.SaveChangesAsync();
+            foreach (var actorId in data.ActorsIds)
+            {
+                var newActorMovie = new Actor_Movie()
+                {
+                    MovieId = data.Id,
+                    ActorId = actorId
+                };
+                await _context.ActorsMovies.AddAsync(newActorMovie);
+            }
+            await _context.SaveChangesAsync();
+        }
     }
 }
