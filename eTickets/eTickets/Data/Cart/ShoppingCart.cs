@@ -55,7 +55,7 @@ namespace eTickets.Data.Cart
                 .FirstOrDefault(x =>
                     x.Movie.Id == movie.Id
                     && x.ShoppingCartId == ShoppingCartId);
-            if (shoppingCartItem == null)
+            if (shoppingCartItem != null)
             {
                 if (shoppingCartItem.Amount > 1)
                 {
