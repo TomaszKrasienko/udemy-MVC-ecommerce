@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using eTickets.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +14,12 @@ namespace eTickets.Data.Cart
         private readonly AppDbContext _context;
         public string ShoppingCartId { get; set; }
         public List<ShoppingCartItem> ShoppingCartItems { get; set; }
+
         public ShoppingCart(AppDbContext context)
         {
             _context = context;
         }
+
         public static ShoppingCart GetShoppingCart(IServiceProvider serviceProvider)
         {
             ISession session = serviceProvider.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
@@ -25,6 +28,7 @@ namespace eTickets.Data.Cart
             session.SetString("CartId", cartId);
             return new ShoppingCart(context) {ShoppingCartId = cartId};
         }
+
         public void AddItemToCart(Movie movie)
         {
             var shoppingCartItem = _context.ShoppingCartItems
@@ -63,12 +67,14 @@ namespace eTickets.Data.Cart
                 }
                 else
                 {
-                    
+
                     _context.ShoppingCartItems.Remove(shoppingCartItem);
                 }
             }
+
             _context.SaveChanges();
         }
+
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
             return ShoppingCartItems ?? (ShoppingCartItems = _context.ShoppingCartItems
@@ -76,11 +82,22 @@ namespace eTickets.Data.Cart
                 .Include(x => x.Movie)
                 .ToList());
         }
+
         public double GetShoppingCartTotal() => _context.ShoppingCartItems
-            .Where(x => 
+            .Where(x =>
                 x.ShoppingCartId == ShoppingCartId)
-            .Select(x => 
+            .Select(x =>
                 x.Movie.Price * x.Amount)
             .Sum();
+
+        public async Task ClearShoppingCartAsync()
+        {
+            var items = await _context.ShoppingCartItems
+                .Where(x =>
+                    x.ShoppingCartId == ShoppingCartId)
+                .ToListAsync(); 
+            _context.ShoppingCartItems.RemoveRange(items);
+            await _context.SaveChangesAsync();
+        }
     }
 }
