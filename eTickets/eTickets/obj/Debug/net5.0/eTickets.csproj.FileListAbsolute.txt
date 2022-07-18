@@ -168,3 +168,4 @@
 /Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/obj/Debug/net5.0/Razor/Views/Orders/ShoppingCart.cshtml.g.cs
 /Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/obj/Debug/net5.0/Razor/Views/Shared/Components/ShoppingCartSummary/Default.cshtml.g.cs
 /Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/obj/Debug/net5.0/Razor/Views/Orders/OrderComplete.cshtml.g.cs
+/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/obj/Debug/net5.0/Razor/Views/Orders/Index.cshtml.g.cs

@@ -17,6 +17,12 @@ namespace eTickets.Controllers
             _shoppingCart = shoppingCart;
             _ordersService = ordersService;
         }
+
+        public async Task<IActionResult> Index()
+        {
+            var orders = await _ordersService.GetOrdersByUserIdAsync("");
+            return View(orders);
+        }
         // GET
         public IActionResult ShoppingCart()
         {
