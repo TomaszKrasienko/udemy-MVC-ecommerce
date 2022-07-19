@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using eTickets.Data;
+using eTickets.Data.Static;
 using eTickets.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -49,6 +50,30 @@ namespace eTickets.Controllers
         public IActionResult Register()
         {
             return View(new RegisterVM());
+        }
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterVM registerVm)
+        {
+            if (!(ModelState.IsValid))
+                return View(registerVm);
+            var user = await _userManager.FindByEmailAsync(registerVm.EmailAddress);
+            if (user != null)
+            {
+                
+                TempData["Error"] = "this email address is already in use";
+                return View(registerVm);
+            }
+
+            var newUser = new ApplicationUser()
+            {
+                FullName = registerVm.FullName,
+                Email = registerVm.EmailAddress,
+                UserName = registerVm.EmailAddress,
+            };
+            var newUserResponse = await _userManager.CreateAsync(newUser, registerVm.Password);
+            if (newUserResponse.Succeeded)
+                await _userManager.AddToRoleAsync(newUser, UserRoles.User);
+            return View("RegisterComplete");
         }
     }
 }

@@ -176,3 +176,4 @@
 /Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/bin/Debug/net5.0/Microsoft.Extensions.Identity.Stores.dll
 /Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/obj/Debug/net5.0/Razor/Views/Account/Login.cshtml.g.cs
 /Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/obj/Debug/net5.0/Razor/Views/Account/Register.cshtml.g.cs
+/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/obj/Debug/net5.0/Razor/Views/Account/RegisterComplete.cshtml.g.cs
