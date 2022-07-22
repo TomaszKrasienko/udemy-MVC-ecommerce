@@ -26,8 +26,15 @@ using eTickets.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/Views/_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3cfd6474bdee3d0936736678f13e12b1ec028e35", @"/Views/Movies/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c674f97b1c3b2a45b6fe325bc7eb90334be63b03", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"aa04052fe74e230da7d43296613aa6be139d3cd8", @"/Views/_ViewImports.cshtml")]
     public class Views_Movies_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Movie>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Details", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -116,7 +123,7 @@ WriteAttributeValue("", 660, Model.Name, 660, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("</p>\n                            <p class=\"card-text\">\n                                <b>Cinema: </b>\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3cfd6474bdee3d0936736678f13e12b1ec028e358365", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3cfd6474bdee3d0936736678f13e12b1ec028e358577", async() => {
                 WriteLiteral("\n                                    ");
 #nullable restore
 #line 29 "/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/Views/Movies/Details.cshtml"
@@ -157,7 +164,7 @@ WriteAttributeValue("", 660, Model.Name, 660, 11, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                            </p>\n                            <p class=\"card-text\">\n                                <b>Producer: </b>\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3cfd6474bdee3d0936736678f13e12b1ec028e3511265", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3cfd6474bdee3d0936736678f13e12b1ec028e3511477", async() => {
                 WriteLiteral("\n                                    ");
 #nullable restore
 #line 35 "/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/Views/Movies/Details.cshtml"
@@ -278,7 +285,7 @@ WriteAttributeValue("", 3144, actor.Actor.ProfilePictureUrl, 3144, 30, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(" style=\"max-width: 150px\"/>\n                                            <br/>\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3cfd6474bdee3d0936736678f13e12b1ec028e3518034", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3cfd6474bdee3d0936736678f13e12b1ec028e3518246", async() => {
 #nullable restore
 #line 65 "/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/Views/Movies/Details.cshtml"
                                                                                                                       Write(actor.Actor.FullName);
@@ -333,7 +340,7 @@ WriteAttributeValue("", 3144, actor.Actor.ProfilePictureUrl, 3144, 30, false);
                         <div class=""card-footer"">
                             <p class=""card-text"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3cfd6474bdee3d0936736678f13e12b1ec028e3521362", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3cfd6474bdee3d0936736678f13e12b1ec028e3521574", async() => {
                 WriteLiteral("\n                                    Back to List\n                                ");
             }
             );
@@ -350,7 +357,7 @@ WriteAttributeValue("", 3144, actor.Actor.ProfilePictureUrl, 3144, 30, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3cfd6474bdee3d0936736678f13e12b1ec028e3522692", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3cfd6474bdee3d0936736678f13e12b1ec028e3522904", async() => {
                 WriteLiteral("\n                                    <i class=\"bi-cart-plus-fill\"></i>Add to cart (Price ");
 #nullable restore
 #line 79 "/Users/mac/Documents/PrivateGitRepos/Udemy_MVC_eCommerce/eTickets/eTickets/Views/Movies/Details.cshtml"
